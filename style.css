@@ -140,12 +140,15 @@ nav button {
 
 .nav__profile ul {
   position: absolute;
-  top: 125%;
+  top: 140%;
   right: 0;
   display: flex;
   flex-direction: column;
   box-shadow: 0 3rem rgba(0, 0, 0, 0.4);
   background: var(--color-gray-900);
+  visibility: hidden; 
+  opacity: 0;
+  transition: var(--transition);
 }
 
 .nav__profile ul li a {
@@ -154,9 +157,14 @@ nav button {
   display: block;
   width: 100%;
 }
-.nav__profile ul li a:last-child(){
+.nav__profile ul li:last-child a{
   background: var(--color-red);
   color: var(--color-bg);
+}
+
+.nav__profile:hover > ul {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* category */
@@ -217,4 +225,27 @@ nav button {
 
 .featured .post__thumbnail{
   height: fit-content;
+}
+
+/* posts */
+
+.posts__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+
+.category__button {
+  padding: 4rem 0;
+  background: red;
+  border-top: 2px solid var(--color-gray-900);
+  border-bottom: 2px solid var(--color-gray-900);
+}
+
+.category__buttons-container{
+width: fit-content;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1rem;
 }
