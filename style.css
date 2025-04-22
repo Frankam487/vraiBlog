@@ -335,3 +335,105 @@ nav button {
     text-align: center;
   }
 }
+
+/* footer part */
+
+/* Footer */
+.footer {
+  background: var(--color-bg-secondary);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid var(--color-primary-light);
+}
+
+.social__container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.social__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--color-bg);
+  border-radius: 50%;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  transition: var(--transition);
+  border: 1px solid var(--color-primary-light);
+}
+
+.social__icon:hover {
+  background: var(--color-primar);
+  color: var(--color-white);
+  transform: scale(1.1);
+  border-color: var(--color-primary);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer__container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer__container h3 {
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transition: var(--transition);
+}
+
+.footer__container h3:hover {
+  color: var(--color-primary);
+  transform: translateX(5px);
+}
+
+.footer__container div:first-child h3 {
+  color: var(--color-accent); /* Turquoise pour la première colonne */
+}
+
+.footer__copyright {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-primary-light);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Responsivité */
+@media screen and (max-width: 1024px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social__container {
+    gap: 1rem;
+  }
+
+  .footer__container h3:hover {
+    transform: none; 
+  }
+}
