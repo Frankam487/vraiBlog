@@ -512,8 +512,50 @@ nav {
 .search__bar-container{
   width: 60%;
 }
-  /* ===========POST========== */
+  /* ===========DASHBOAD========== */
+  .main {
+
+    margin: 10rem -40rem;
+  }
+ .dashboad__container {
+
+   display: grid;
+  width: 100%;
+  grid-template-columns: 4.5rem auto;
+
+
+  background-color: red;
+ }
  
+ main {
+  display: flex;
+  width: 100%;
+  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
+ .dashboad aside {
+  background: var(--color-bg-secondary);
+  width: 30%;
+  height: 100%;
+ }
+ .dashboad aside h5 {
+  display: none;
+ }
+ .dashboad main table thead {
+  display: none;
+ }
+ .dashboad main table tr {
+  display: flex;
+  flex-direction: column;
+ }
+ .dashboad main table tr:nth-child(even) {
+  background: gray;
+ }
+ .dashboad main table tr:hover td {
+  background: transparent;
+ }
 }
 
 @media screen and (max-width: 600px) {
@@ -684,11 +726,13 @@ box-shadow: 12px 10px -7px black;
 
 }
 .btn.danger {
-  background-color: rgba(255, 0, 0, 0.882);
+   border-radius: var(--card-border-radius-1);
+  background-color: rgba(66, 4, 4, 0.842);
+  color: #e0e0e0;
 }
 .btn:hover {
-  background: white;
-  color: #0f7c00;
+  background: rgba(3, 127, 3, 0.598);
+  color: #000000;
 }
 /* ================= POST================ */
 .singlepost {
@@ -803,16 +847,27 @@ flex-direction: row;
 .dashboad{
   margin: 6rem 0;
 }
+.btn.edit {
+  background-color: rgba(128, 128, 128, 0.398);
+  border-radius: var(--card-border-radius-1);
+  padding: 2px 25px;
+}
+
 .dashboad__container {
   display: grid;
   grid-template-columns: 14rem auto;
   gap: 1rem;
+  
   padding: 2rem;
   background: var(--color-bg-secondary);
   margin-bottom: 5rem;
 }
+/* .dashboad__container ul{
+  width: 20%;
+} */
 .dashboad aside a {
   display: flex;
+  
   background: rgba(82, 82, 82, 0.35);
   align-items: center;
   padding: 1.6rem;
@@ -822,4 +877,39 @@ flex-direction: row;
 }
 .dashboad aside a:hover {
   background: var(--color-bg-secondary);
+}
+.dashboad aside a.active {
+  background: rgba(128, 128, 128, 0.398);
+}
+.dashboad main {
+  margin-left: 1.5rem;
+}
+.dashboad main h2 {
+  margin: 0 0 2rem 0;
+  line-height: 1;
+}
+
+.dashboad main table {
+  width: 100%;
+  text-align: center;
+}
+
+.dashboad main table th {
+  background: rgba(128, 128, 128, 0.398);
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  border-radius: var(--card-border-radius-1);
+  border: 1px solid var(--color-primary-variant);
+}
+.dashboad main table td{
+  padding: .7rem;
+  border-bottom: 1px solid var(--color-primary-variant);
+
+}
+.dashboad main table tr:hover td {
+  background: rgba(128, 128, 128, 0.398);
+  color: var(--color-primary-variant);
+  cursor: default;
+  transition: var(--transition);
 }
