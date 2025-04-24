@@ -513,11 +513,8 @@ nav {
   width: 60%;
 }
   /* ===========DASHBOAD========== */
-  .main {
-
-    margin: 10rem -40rem;
-  }
- .dashboad__container {
+ 
+ /* .dashboad__container {
 
    display: grid;
   width: 100%;
@@ -555,7 +552,7 @@ nav {
  }
  .dashboad main table tr:hover td {
   background: transparent;
- }
+ } */
 }
 
 @media screen and (max-width: 600px) {
@@ -844,7 +841,7 @@ flex-direction: row;
 }
 
 /* =====================DASHBOAD======================== */
-.dashboad{
+/* .dashboad{
   margin: 6rem 0;
 }
 .btn.edit {
@@ -861,11 +858,9 @@ flex-direction: row;
   padding: 2rem;
   background: var(--color-bg-secondary);
   margin-bottom: 5rem;
-}
-/* .dashboad__container ul{
-  width: 20%;
 } */
-.dashboad aside a {
+
+/* .dashboad aside a {
   display: flex;
   
   background: rgba(82, 82, 82, 0.35);
@@ -912,4 +907,317 @@ flex-direction: row;
   color: var(--color-primary-variant);
   cursor: default;
   transition: var(--transition);
+} */
+
+
+/* Importation de la police Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Réinitialisation et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #f5f6f5 0%, #e8ecef 100%); /* Gradient subtil */
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Conteneur principal */
+.dashboard {
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard__container {
+    display: flex;
+    max-width: 1400px;
+    width: 100%;
+    gap: 30px;
+}
+
+/* Barre latérale */
+aside {
+    width: 280px;
+    background: rgba(255, 255, 255, 0.95); /* Glassmorphism */
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 30px;
+    height: fit-content;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    margin: 12px 0;
+}
+
+aside ul li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    color: #333333;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+aside ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(20, 168, 0, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+aside ul li a:hover::before,
+aside ul li a.active::before {
+    left: 100%;
+}
+
+aside ul li a:hover,
+aside ul li a.active {
+    background: #14a800; /* Vert lime d'Upwork */
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+aside ul li a i {
+    font-size: 22px;
+    margin-right: 12px;
+    transition: transform 0.3s;
+}
+
+aside ul li a:hover i,
+aside ul li a.active i {
+    transform: scale(1.1);
+}
+
+aside ul li a h5 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Contenu principal */
+.main {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    animation: slideIn 0.5s ease forwards;
+}
+
+.main h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.main h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #14a800;
+    border-radius: 2px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    margin-top: 20px;
+}
+
+thead {
+    background: #f5f6f5;
+    border-radius: 12px;
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 15px;
+    color: #333333;
+}
+
+th {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+td {
+    background: #fafafa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+tr:hover td {
+    background: #f0f4f8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Boutons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.4s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn.edit {
+    background: #37a0e6; /* Bleu clair d'Upwork */
+    color: #ffffff;
+}
+
+.btn.edit:hover {
+    background: #2e8bc9;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(55, 160, 230, 0.3);
+}
+
+.btn.danger {
+    background: #d32f2f;
+    color: #ffffff;
+}
+
+.btn.danger:hover {
+    background: #b71c1c;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+}
+
+.btn.sm {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+/* Animation d'apparition */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 20px;
+    }
+
+    .dashboard__container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    aside {
+        width: 100%;
+        position: static;
+        padding: 20px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        background: transparent;
+        border-radius: 0;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #333333;
+        flex: 1;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+a:focus, .btn:focus {
+    outline: 2px solid #14a800;
+    outline-offset: 2px;
 }
