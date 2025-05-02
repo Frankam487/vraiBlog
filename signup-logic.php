@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 require 'config/database.php';
 
 if (isset($_POST['submit'])) {
@@ -30,14 +30,14 @@ if (isset($_POST['submit'])) {
     } else {
       $hashPassword = password_hash($createpassword, PASSWORD_DEFAULT);
 
-      // Vérifier si username ou email existe déjà
+     
       $userSql = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
       $userResult = mysqli_query($connection, $userSql);
       
       if (mysqli_num_rows($userResult) > 0) {
         $_SESSION['signup'] = "Nom d'utilisateur ou email déjà utilisé";
       } else {
-        // Traitement de l'image
+        
         $time = time();
         $avatar_name = $time . $avatar['name'];
         $avatar_tmp_name = $avatar['tmp_name'];
@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
             $insert_user_result = mysqli_query($connection, $insert_user);
             
             if (!mysqli_error($connection)) {
-              $_SESSION['signup'] = "Enregistrement réussi";
+              $_SESSION['signup-success'] = "Enregistrement réussi";
               header("location: " . ROOT_URL . 'signup.php');
               exit();
             } else {
@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
     }
   }
 
-  // Redirection avec les données en session
+ 
   if (isset($_SESSION['signup'])) {
     $_SESSION['signup-data'] = $_POST;
     header("location: " . ROOT_URL . "signup.php");

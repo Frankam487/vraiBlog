@@ -18,7 +18,7 @@ unset($_SESSION['signup-data']);
   <title>s'inscrire</title>
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"> -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  <link rel="stylesheet" href="<?=ROOT_URL?>css/style.css">
+  <link rel="stylesheet" href="<?= ROOT_URL ?>css/style.css">
 </head>
 <body>
 
