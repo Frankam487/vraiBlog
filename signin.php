@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog App</title>
+  <title>Se connecter</title>
+ 
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
@@ -25,7 +26,7 @@
      
       
       <button type="submit" id="btn">S'inscrire</button>
-      <small>Tu n'as pas de compte ? <a href="signup.html"> Creer un compte</a></small>
+      <small>Tu n'as pas de compte ? <a href="signup.php"> Creer un compte</a></small>
     </form>
   </div>
 </section>

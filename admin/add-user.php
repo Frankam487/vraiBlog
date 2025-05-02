@@ -1,37 +1,35 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog App</title>
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+<?php 
+include './partials/header.php';
+?>
 <section class="form__section">
   <div class="container form__section-container">
-    <h2>S'inscrire</h2>
+    <h2>Ajouter un utilisateur</h2>
     <div class="alert__message error">
       <p>Ca cest un message d'erreur</p>
     </div>
-    <form action="" enctype="multipart/form-data">
+   <form action="" enctype="multipart/form-data">
       <input type="text" placeholder="Prenom">
       <input type="text" placeholder="Nom">
       <input type="text" placeholder="pseudo">
       <input type="email" placeholder="Email">
       <input type="password" placeholder="Mot de passe">
       <input type="password" placeholder="Confirm Mot de passe">
+      <select name="" id="">
+        <option value="0">Auteur</option>
+        <option value="1">Amin</option>
+      </select>
       <div class="form__control">
         <label for="avatar">Avatar de L'utilisateur</label>
         <input type="file" id="avatar">
       </div>
-      <button type="submit" id="btn">S'inscrire</button>
-      <small>Deja un compte ? <a href="signin.html"> Se connecter</a></small>
+      <button type="submit" id="btn">Ajouter un utilisateur</button>
+     
     </form>
   </div>
 </section>
 
-</body>
-</html>
+
+
+  <?php 
+  include '../partials/header.php';
+  ?>

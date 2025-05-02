@@ -1,56 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog App</title>
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <nav>
-    <div class="container nav__container">
-      <a href="index.html" class="nav__logo">Frankam.</a>
-      <ul class="nav__items">
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="signin.html">Sign in</a></li>
-        <li class="nav__profile">
-          <div class="avatar">
-            <img src="./images/people-centered-care-wcd2025.jpg.webp" alt="Avatar de l'utilisateur">
-          </div>
-          <ul>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="logout.html">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-      <button id="open__nav-btn" aria-label="Ouvrir le menu"><i class="uil uil-bars"></i></button>
-      <button id="close__nav-btn" aria-label="Fermer le menu"><i class="uil uil-multiply"></i></button>
-    </div>
-  </nav>
-
-
-
-
-
-
-
-
-
-<section class="empty__page">
-  <h1>Page A Propos</h1>
-</section>
-
-
-
-
-
-
-
-   <footer class="footer">
+<footer class="footer">
     <div class="social__container">
       <a href="#" class="social__icon" aria-label="Facebook">
         <i class="uil uil-facebook"></i>
@@ -104,6 +52,7 @@
     </div>
   </footer>
 
-  <script src="./main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
+
