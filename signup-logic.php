@@ -82,6 +82,6 @@ if (isset($_POST['submit'])) {
   }
 
 } else {
-  header("Location: " . ROOT_URL . 'signup.php');
+  header("location: " . ROOT_URL . 'signup.php');
   exit();
 }

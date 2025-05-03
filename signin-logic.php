@@ -37,7 +37,11 @@ if (isset($_POST['btn'])) {
         }
     }
 
-    header("Location:" . ROOT_URL . "signin.php");
+    if (isset($_SESSION['signin'])){
+      $_SESSION['signin-data'] = $_POST;
+      header("Location:" . ROOT_URL . "signin.php");
+      die();
+    }
     exit;
 } else {
     header("Location:" . ROOT_URL . "signin.php");
