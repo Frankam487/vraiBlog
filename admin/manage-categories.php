@@ -18,6 +18,9 @@ include './partials/header.php';
         <h5>gerer les posts</h5>
         </a>
       </li>
+
+      <?php  if (isset($_SESSION['user-is_admin'])) : ?>
+
         <li>
           <a href="add-user.php"><i class="uil uil-user-plus"></i>
         <h5>Ajouter un utilisateur</h5>
@@ -34,6 +37,7 @@ include './partials/header.php';
         <li><a href="manage-categories.php" class="active"><i class="uil uil-pen"></i>
         <h5>Gerer les categories</h5>
         </a></li>
+        <?php endif ?>
       </ul>
     </aside>
     <main class="main">

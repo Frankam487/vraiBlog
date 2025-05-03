@@ -1,5 +1,5 @@
 <?php
-session_start(); // IMPORTANT
+session_start(); 
 require './config/database.php';
 
 if (isset($_POST['btn'])) {
@@ -11,7 +11,7 @@ if (isset($_POST['btn'])) {
     } elseif (!$password) {
         $_SESSION['signin'] = "Le mot de passe est requis";
     } else {
-        // Sécurisation : requête préparée
+        
         $stmt = mysqli_prepare($connection, "SELECT * FROM users WHERE username = ? OR email = ?");
         mysqli_stmt_bind_param($stmt, "ss", $username_email, $username_email);
         mysqli_stmt_execute($stmt);
@@ -42,7 +42,7 @@ if (isset($_POST['btn'])) {
       header("Location:" . ROOT_URL . "signin.php");
       die();
     }
-    exit;
+    
 } else {
     header("Location:" . ROOT_URL . "signin.php");
     exit;
