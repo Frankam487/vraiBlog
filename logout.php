@@ -1,6 +1,8 @@
 <?php
-
 require 'config/constants.php';
+session_start();
+session_start();
+session_unset();
 session_destroy();
-header('Location:' . ROOT_URL);
+header('location:' . ROOT_URL);
 die();

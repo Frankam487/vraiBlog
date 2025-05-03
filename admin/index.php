@@ -1,5 +1,5 @@
 <?php 
-include './partials/header.php';
+include '../partials/header.php';
 ?>
 
 <section class="dashboad">
@@ -18,7 +18,7 @@ include './partials/header.php';
         <h5>gerer les posts</h5>
         </a>
       </li>
-       <?php if (isset($_SESSION['user-is_admin'])) : ?>
+       <?php if(isset($_SESSION['is-admin'])) : ?>
         <li>
           <a href="add-user.php"><i class="uil uil-user-plus"></i>
         <h5>Ajouter un utilisateur</h5>
