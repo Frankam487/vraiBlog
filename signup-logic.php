@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+
 require 'config/database.php';
 
 if (isset($_POST['submit'])) {
@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     $_SESSION['signup'] = "Stp entre ton nom d'utilisateur";
   } elseif (!$email) {
     $_SESSION['signup'] = "Stp entre un email valide";
-  } elseif (strlen($createpassword) < 8 || strlen($confirmpassword) < 8) {
+  } elseif(strlen($createpassword) < 8 || strlen($confirmpassword) < 8) {
     $_SESSION['signup'] = "Le mot de passe doit avoir au moins 8 caractères !";
   } elseif (!$avatar['name']) {
     $_SESSION['signup'] = "Stp sélectionne une image";
@@ -50,19 +50,6 @@ if (isset($_POST['submit'])) {
           if ($avatar['size'] < 1000000) {
             move_uploaded_file($avatar_tmp_name, $avatar_destination_path);
 
-            
-            $insert_user = "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin)
-            VALUES ('$firstname', '$lastname', '$username', '$email', '$hashPassword', '$avatar_name', 0)";
-            
-            $insert_user_result = mysqli_query($connection, $insert_user);
-            
-            if (!mysqli_error($connection)) {
-              $_SESSION['signup-success'] = "Enregistrement réussi";
-              header("location: " . ROOT_URL . 'signup.php');
-              exit();
-            } else {
-              $_SESSION['signup'] = "Erreur lors de l'enregistrement";
-            }
 
           } else {
             $_SESSION['signup'] = "Le fichier est trop lourd (max 1Mo)";
@@ -74,14 +61,25 @@ if (isset($_POST['submit'])) {
     }
   }
 
- 
   if (isset($_SESSION['signup'])) {
     $_SESSION['signup-data'] = $_POST;
     header("location: " . ROOT_URL . "signup.php");
     exit();
+  } else {
+            $insert_user = "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin)
+            VALUES ('$firstname', '$lastname', '$username', '$email', '$hashPassword', '$avatar_name', 0)";
+            
+            $insert_user_result = mysqli_query($connection, $insert_user);
+            if(!mysqli_errno($connection)){
+              $_SESSION['signup-success'] = "Enregistrement réussi";
+              header("location: " . ROOT_URL . 'signin.php');
+              exit();
+            }
   }
 
 } else {
   header("location: " . ROOT_URL . 'signup.php');
   exit();
 }
+
+

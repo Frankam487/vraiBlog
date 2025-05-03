@@ -7,22 +7,22 @@ include './partials/header.php';
     <div class="alert__message error">
       <p>Ca cest un message d'erreur</p>
     </div>
-   <form action="" enctype="multipart/form-data">
-      <input type="text" placeholder="Prenom">
-      <input type="text" placeholder="Nom">
-      <input type="text" placeholder="pseudo">
-      <input type="email" placeholder="Email">
-      <input type="password" placeholder="Mot de passe">
-      <input type="password" placeholder="Confirm Mot de passe">
-      <select name="" id="">
+   <form action="<?= ROOT_URL?>admin/add-user-logic.php" method="POST">
+      <input type="text" name="firstname" placeholder="Prenom">
+      <input type="text" name="lastname" placeholder="Nom">
+      <input type="text" name="username" placeholder="pseudo">
+      <input type="email" name="email" placeholder="Email">
+      <input type="password" name="createpassword" placeholder="Mot de passe">
+      <input type="password" name="confirmpassword" placeholder="Confirm Mot de passe">
+      <select name="userrole" id="">
         <option value="0">Auteur</option>
-        <option value="1">Amin</option>
+        <option value="1">Admin</option>
       </select>
       <div class="form__control">
         <label for="avatar">Avatar de L'utilisateur</label>
-        <input type="file" id="avatar">
+        <input name="avatar" type="file" id="avatar" >
       </div>
-      <button type="submit" id="btn">Ajouter un utilisateur</button>
+      <button type="submit" name="submit" id="btn">Ajouter un utilisateur</button>
      
     </form>
   </div>

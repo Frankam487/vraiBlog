@@ -19,7 +19,7 @@ include './partials/header.php';
         </a>
       </li>
 
-      <?php  if (isset($_SESSION['is-admin'])) : ?>
+      <?php  if (isset($_SESSION['user_is_admin'])) : ?>
 
         <li>
           <a href="add-user.php"><i class="uil uil-user-plus"></i>
