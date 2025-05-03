@@ -4,6 +4,7 @@ include './partials/header.php';
 <section class="dashboad">
   <div class="conatiner dashboad__container">
     <button id="show__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-right-b"></i></button>
+    
     <button id="hide__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-right-b"></i></button>
     <aside>
       <ul>
