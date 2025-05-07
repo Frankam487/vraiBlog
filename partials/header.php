@@ -35,6 +35,7 @@ if(isset($_SESSION['user-id'])){
             <img src="<?= ROOT_URL . 'images/' . $avatar['avatar']; ?>" alt="Avatar de l'utilisateur">
           </div>
           <ul>
+            <p>Lorem, ipsum.</p>
             <li><a href="<?= ROOT_URL ?>/admin/index.php">Tableau de bord</a></li>
             <li><a href="<?= ROOT_URL ?>logout.php">Se deconnecter</a></li>
           </ul>
