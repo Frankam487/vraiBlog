@@ -77,7 +77,6 @@ include "./partials/header.php"
     </div>
   </section>
 
-  <!-- FIN DE CATEGORIE -->
   <?php
 include "./partials/footer.php";
 ?>
