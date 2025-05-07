@@ -26,11 +26,11 @@ if (isset($_POST['btn'])) {
                     $_SESSION['user_is_admin'] = true;
                     header("Location: " . ROOT_URL . "admin/");
                 } else {
-                    header("Location: " . ROOT_URL . "admin");
+                    header("Location: " . ROOT_URL . "admin/");
                 }
                 exit;
             } else {
-                $_SESSION['signin'] = "Mot de passe incorrect.";
+                $_SESSION['signin'] = "stp verifie bien tes champs.";
             }
         } else {
             $_SESSION['signin'] = "Utilisateur non trouvé !";
@@ -39,12 +39,12 @@ if (isset($_POST['btn'])) {
 
     if (isset($_SESSION['signin'])){
       $_SESSION['signin-data'] = $_POST;
-      header("Location:" . ROOT_URL . "signin.php");
+      header("location:" . ROOT_URL . "signin.php");
       die();
     }
     
 } else {
-    header("Location:" . ROOT_URL . "signin.php");
+    header("location:" . ROOT_URL . "signin.php");
     exit;
 }
 ?>
